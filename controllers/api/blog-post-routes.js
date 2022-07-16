@@ -80,7 +80,7 @@ router.post("/", (req, res) => {
   Blog_Post.create({
     title: req.body.title,
     body: req.body.body,
-    user_id: req.user_id, //.seesion
+    user_id: req.body.user_id, //.seesion
   })
     .then((dbBlogPostData) => res.json(dbBlogPostData))
     .catch((err) => {
