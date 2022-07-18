@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 
       res.render('home', {
         blogPosts,
-        // loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {
@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
 });
 
 // get single post
-router.get('/post/:id', (req, res) => {
+router.get('/blog-post/:id', (req, res) => {
   Blog_Post.findOne({
     where: {
       id: req.params.id
@@ -74,10 +74,10 @@ router.get('/post/:id', (req, res) => {
         return;
       }
 
-      const post = dbBlogPostData.get({ plain: true });
+      const blogPost = dbBlogPostData.get({ plain: true });
 
-      res.render('single-post', {
-        post,
+      res.render('single-blog-post', {
+        blogPost,
         loggedIn: req.session.loggedIn
       });
     })

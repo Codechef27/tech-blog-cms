@@ -1,7 +1,9 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
+
+<h2 class="blog-title">Recent Blogs</h2>
+<ul class="post-list">
+  {{#each blogPosts as |blogPost|}}
   <li>
-    {{> post-info post }}
+    {{> blog-post-info blogPost }}
   </li>
   {{/each}}
-</ol>
+</ul>

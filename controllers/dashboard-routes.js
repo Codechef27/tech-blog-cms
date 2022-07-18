@@ -4,7 +4,7 @@ const { Blog_Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
-router.get('/', (req, res) => {
+router.get('/',  (req, res) => {
   console.log(req.session);
   console.log('======================');
   Blog_Post.findAll({
@@ -33,8 +33,8 @@ router.get('/', (req, res) => {
     ]
   })
     .then(dbBlogPostData => {
-      const posts = dbBlogPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
+      const blogPosts = dbBlogPostData.map(blogPost => blogPost.get({ plain: true }));
+      res.render('dashboard', { blogPosts, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -42,8 +42,8 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/edit/:id',  (req, res) => {
-  Post.findByPk(req.params.id, {
+router.get('/edit/:id', withAuth,  (req, res) => {
+  Blog_Post.findByPk(req.params.id, {
     attributes: [
       'id',
       'title',
@@ -67,10 +67,10 @@ router.get('/edit/:id',  (req, res) => {
   })
     .then(dbBlogPostData => {
       if (dbBlogPostData) {
-        const post = dbBlogPostData.get({ plain: true });
+        const blogPost = dbBlogPostData.get({ plain: true });
         
-        res.render('edit-post', {
-          post,
+        res.render('edit', {
+          blogPost,
           loggedIn: true
         });
       } else {
