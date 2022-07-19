@@ -1,9 +1,14 @@
-{{> blog-post-info blogPost}}
+
+
+  <div class="blog-container">
+    {{> blog-post-info blogPost}}
+  </div>
+
 
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea placeholder="leave a comment" name="comment-body"></textarea>
   </div>
 
   <div>

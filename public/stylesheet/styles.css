@@ -1,29 +1,32 @@
-* {
-    box-sizing: border-box;
-}
 
 body,
 html {
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
-    color: #333;
+    font-family:  Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    
+}
+
+.main {
+    background-color: rgba(0, 0, 0, 0.781);
+    padding: 2% 4%;
 }
 
 a {
     text-decoration: none;
-    color: #225ca3;
+    color: cornflowerblue;
     font-weight: bold;
     transition: color .1s;
 }
 
 a:hover {
-    color: #3486eb;
+    color: lightskyblue;
 }
 
 button {
-    background-color: #225ca3;
+    background-color: cornflowerblue;
     border: 0;
     padding: 1%;
     color: white;
@@ -34,30 +37,36 @@ button {
 }
 
 button:hover {
-    background-color: #3486eb;
+    background-color: lightskyblue;
 }
 
 .post-list {
-    margin: 0;
     padding: 0;
+    list-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 textarea,
 input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid yellow;
 }
 
 textarea:focus,
 input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid yellow;
 }
 
 textarea {
     min-width: 40%;
     min-height: 100px;
+
 }
 
 form>div {
@@ -70,28 +79,24 @@ form label {
 
 .wrapper {
     width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
 header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid yellow;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
+    height: 100px;
+    background-color: darkslategray;
 }
 
 header h1 {
-    font-size: 1em;
-}
-
-main {
-    flex: 1;
-    padding: 2% 4%;
+    font-size: 32px;
 }
 
 .btn-no-style {
@@ -100,7 +105,7 @@ main {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: cornflowerblue;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -109,7 +114,7 @@ main {
 
 .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color:lightskyblue;
 }
 
 .delete-post-btn {
@@ -121,29 +126,34 @@ main {
 }
 
 .post {
-    margin-bottom: 2%;
+    margin: 0 2% 2%;
     line-height: 150%;
 }
-
-.post .title span {
+/* 
+.blog-container title span {
     font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
+    font-size: 90%; 
+    background-color: aliceblue;  
+} */
+.blog-title {
+    padding: 0 0 10px;
+    border-bottom: 1px solid black;
 }
-
 .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
 }
 
-.upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
+.blog-container {
+    border: 1px solid yellow;
+    background-color: darkslategrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin:4px 0 4px ;
+    text-align: center;
+    width: 600px;
+    
 }
 
-.upvote-btn:hover {
-    background-color: #1f9c13;
-}
 
 .comment-form {
     margin-bottom: 5%;
@@ -152,10 +162,12 @@ main {
 .comment {
     padding: 1%;
     margin-bottom: 1%;
+    border: 1px solid yellow;
 }
 
 .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: darkslategray;
+    border: 1px solid yellow;
 }
 
 .comment .meta {
@@ -173,9 +185,12 @@ main {
 }
 
 footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid yellow;
+    background-color: darkslategray;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 1%;
     font-size: 110%;
+    height: 100%;
 }

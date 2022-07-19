@@ -17,9 +17,9 @@
 {{#if blogPosts.length}}
 <section>
   <h2>Your Blog Posts</h2>
-  <ol>
+  <ol class="post-list">
     {{#each blogPosts as |blogPost|}}
-    <li>
+    <li class="blog-container">
       {{> blog-post-info blogPost}}
       <a href="/dashboard/edit/{{blogPost.id}}" class="edit-link">Edit post</a>
     </li>
