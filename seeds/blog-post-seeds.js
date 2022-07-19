@@ -18,6 +18,6 @@ const postData = [
   }
 ] 
 
-const seedPosts = () => Blog_Post.bulkCreate(postData);
+const seedBlogs = () => Blog_Post.bulkCreate(postData);
 
-module.exports = seedPosts;
+module.exports = seedBlogs;
